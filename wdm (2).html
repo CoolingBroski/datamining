@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+body, html, .container-fluid {
+     height: 100%;
+}
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Porcentaje", { role: "style" } ],
+	["Afrontamiento con problemas más presionantes", 36, "#0908e1"],
+        ["No es una inversión eficiente", 18, "#0908e1"],
+        ["Desconocimiento sobre el tema", 9, "#0908e1"],
+        ["Falta de personal hábil", 9, "#0908e1"],
+        ["Falta de apoyo administrativo", 5, "#0908e1"],
+	["No visto como relevante para su negocio", 5, "#0908e1"],
+	["Falta de recursos generalmente", 5, "#0908e1"],
+	["Otras razones", 14, "#0908e1"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Razones por las cuales las empresas no contratan más personal para la minería de datos",
+	chartArea: {width: "50%"},
+	hAxis: {
+          title: 'Porcentaje',
+          minValue: 0,
+          textStyle: {
+            bold: true,
+            fontSize: 12,
+            color: '#4d4d4d'
+          },
+          titleTextStyle: {
+            bold: true,
+            fontSize: 18,
+            color: '#4d4d4d'
+          }
+	},
+        width: 1500,
+        height: 400,
+        bar: {groupWidth: "90%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Web Data Mining</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+    	 <div class="row" style="height:35%">
+         <img src="images/header.png" class="img-responsive" style="width:100%"/> 
+         </div>
+         <!--! botones -->
+    <div class="row" style="height:auto">
+		<div class="col-3">
+		</div>
+		<div class="col-6">
+		<nav class="navbar navbar-expand-sm bg-light">
+
+		  <!-- Links -->
+		  <div class="col-sm">
+			</div>
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="index.html">INICIO</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="wdm.html">WEB DATA MINING</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="#">METODOLOGÍAS</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="#">TENDENCIAS</a>
+			</li>
+		  </ul>
+		  <div class="col-sm">
+			</div>
+
+		</nav>
+		</div>
+		<div class="col-3">
+		</div>
+	</div>
+	<div class="row" style="height:auto">
+		<div class="col-3"></div>
+		<div class="col-6">
+		<img src="images/twits.png" class="img-responsive" style="width:100%"/>
+		</div>
+		<div class="col-3"></div>
+    </div>
+         <!--! que e mineria de datos -->
+    <div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			 <h1 class="text-center">¿En qué consiste el web data mining?</h1>
+             <p class="text-center">
+             En el reconocimiento de patrones a través de recursos recopilados de distintos contenidos encontrados en la web.
+             </p>
+			 </div>
+		<div class="col-3"></div>
+    </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p class="text-center">
+                Esta es una área del negocio que tiende a ser despreciada por las empresas. Usualmente es visto como algo del cual solo las empresas grandes con muchos fondos adicionales
+					hacen uso. Por el otro lado, las empresas medias y pequeñas se preocupan más por aumentar sus medios de producción.
+                </p>
+            </div>
+			<div class="col-3"></div>
+        </div>
+         <div class="row">
+             <div class="col-3"></div>
+			 <div class="col-sm">
+         	<div id="barchart_values" class="chart"></div>
+			 </div>
+			 <div class="col-3"></div>
+        </div>
+        <!--! mapa america y texto -->
+        <div class="row">
+            <div class="col-3"></div>
+         	<div class="col-sm">
+            <h2>¿Cómo se lleva a cabo la minería de datos?</h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p>Utiliza el análisis matemático para deducir los patrones y tendencias que existen en los datos.></p>
+            </div>
+            <div class="col-sm">
+                <form action="#">
+            <input type="submit" value="Saber mas" />
+            </form>
+            </div>
+            <div class="col-3"></div>
+            
+        </div>
+        <!--! mas texto -->
+        <div class="row">
+            <div class="col-3"></div>
+         	<div class="col-sm">
+            <h2>¿Cómo se lleva a cabo la minería de datos?</h2>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <form action="#">
+            <input type="submit" value="Saber mas" />
+            </form>
+            </div>
+            <div class="col-sm">
+                <p>Extracción de información a partir de recursos encontrados en internet.</p>
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <div class="row" style="height:35%">
+            <img src="images/end.png" class="img-responsive" style="width:100%"/> 
+        </div>
+     </div>
+</body>
+</html>

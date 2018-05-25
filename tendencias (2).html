@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+body, html, .container-fluid {
+     height: 100%;
+}
+.chart {
+  width: 100%; 
+}
+svg > g > g:last-child { pointer-events: none }
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Porcentaje'],
+          ['ET', 17.12],
+          ['CN', 15.41],
+          ['ZW', 11.3],
+          ['NP', 11.13],
+          ['MM', 9.24],
+          ['IN', 8.73],
+          ['PK', 7.36],
+          ['SH', 7.02],
+          ['SD', 6.5],
+          ['SG', 6.16]
+        ]);
+
+        var options = {
+		colorAxis: {colors: ['BAE4E7','0068CC']}
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Porcentaje'],
+          ['CU', 42.73],
+          ['CO', 11.53],
+          ['PE', 9.82],
+          ['EC', 9.4],
+          ['CR', 8.54],
+          ['MX', 7.26],
+		  ['CL', 6.83],
+		  ['VE', 2.13],
+		  ['AR', 1.7]
+        ]);
+
+        var options = {
+		colorAxis: {colors: ['BAE4E7','0068CC']}
+		};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+	
+	<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Años', 'Articulos'],
+          ['2000-2010',1020000],
+          ['2010-2018',942000],
+          ['2018', 35400]
+        ]);
+
+      var options = {
+        legend: 'none',
+        pieSliceText: 'label',
+        title: 'Articulos a través el tiempo sobre Data Mining',
+        pieStartAngle: 100,
+      };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Web Data Mining</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+    	 <div class="row" style="height:20%">
+         <img src="images/header.png" class="img-responsive" style="width:100%"/> 
+         </div>
+         <!--! botones -->
+    <div class="row" style="height:auto">
+		<div class="col-3">
+		</div>
+		<div class="col-6">
+		<nav class="navbar navbar-expand-sm bg-light">
+
+		  <!-- Links -->
+		  <div class="col-sm">
+			</div>
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="index.html">INICIO</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="wdm.html">WEB DATA MINING</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="#">METODOLOGÍAS</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="#">TENDENCIAS</a>
+			</li>
+		  </ul>
+		  <div class="col-sm">
+			</div>
+
+		</nav>
+		</div>
+		<div class="col-3">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-sm">
+		<p class="text-center">Analicemos el interés general que hay sobre el data mining. 
+		Sorprendemente no ha aumentado mucho de acuerdo a la información que recopilamos a pesar de que la tecnología no ha hecho más que mejorar exponencialmente para facilitar la minería de datos y aumentar la cantidad de datos posibles que se pueden analizar a la vez</p>
+		</div>
+		<div class="col-3"></div>
+    </div>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-sm">
+		<h3 class="text-center">Búsquedas de data mining en Asia/África</h3>
+		</div>
+		<div class="col-3"></div>
+    	</div>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-sm">
+		<div class="chart" id="regions_div"></div>
+		</div>
+		<div class="col-3"></div>
+	</div>
+    <div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			 <h3 class="text-center">Búsquedas de data mining en Latinoamérica</h3>
+		</div>
+		<div class="col-3"></div>
+	</div>
+	<div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			<div class="chart" id="regions_div2"></div>
+		</div>
+		<div class="col-3"></div>
+	</div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+				<div class="chart" id="piechart"></div>
+            </div>
+			<div class="col-3"></div>
+        </div>
+         <!--! mapa asia y texto -->
+         <div class="row">
+             <div class="col-3"></div>
+			 <div class="col-sm">
+         	<div id="chart_div" class="chart"></div>
+			 </div>
+			 <div class="col-3"></div>
+        </div>
+        <div class="row" style="height:20%">
+            <img src="images/end.png" class="img-responsive" style="width:100%"/> 
+        </div>
+     </div>
+</body>
+</html>
