@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+body, html, .container-fluid {
+     height: 100%;
+}
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
+svg > g > g:last-child { pointer-events: none }
+</style>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', 'Metodologías más usadas para la minería de datos por las empresas'],
+          ['CRISP-DM', 43], ['Específica al dominio', 2], ['SEMMA', 8.5], ['KDD', 7.5],
+          ['Metodología propia', 39],
+        ]);
+
+        var options = {
+          title: 'Uso de cada metodología por empresas',
+          legend: 'none',
+          pieSliceText: 'label',
+          slices: {  0: {offset: 0, color: '#005ce6'},
+                     3: {offset: 0.3, color: '#00b300'},
+                     2: {offset: 0.4, color: '#008080'},
+                     1: {offset: 0.5, color: '#5900b3'},
+					 4: {color: '#008000'}
+          },
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Web Data Mining</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+    	 <div class="row" style="height:35%">
+         <img src="images/header.png" class="img-responsive" style="width:100%"/> 
+         </div>
+         <!--! botones -->
+    <div class="row" style="height:auto">
+		<div class="col-3">
+		</div>
+		<div class="col-6">
+		<nav class="navbar navbar-expand-sm bg-light">
+
+		  <!-- Links -->
+		  <div class="col-sm">
+			</div>
+		  <ul class="navbar-nav">
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="index.html">INICIO</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="wdm.html">WEB DATA MINING</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="metodologias.html">METODOLOGÍAS</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" style="color:black" href="tendencias.html">TENDENCIAS</a>
+			</li>
+		  </ul>
+		  <div class="col-sm">
+			</div>
+
+		</nav>
+		</div>
+		<div class="col-3">
+		</div>
+	</div>
+	<div class="row" style="height:auto">
+		<div class="col-5"></div>
+		<div class="col-md-auto">
+			<img src="images/dm.png" class="img-responsive" style="width:100%"/>
+		</div>
+		<div class="col-5"></div>
+    </div>
+         <!--! que e mineria de datos -->
+    <div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-6">
+			 <h1 class="text-center">Metodologías usadas para el data mining</h1>
+             <p class="text-center">
+             Las principales metodologías para el data mining son tres y son CRISP-DM, KDD y SEMMA.
+             </p>
+			 </div>
+		<div class="col-3"></div>
+    </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p class="text-center">
+                CRISP-DM(Cross Industry Standard Process for Data Mining) Se trata de un modelo de proceso de minería de datos que describe los enfoques comunes que utilizan los expertos en minería de datos
+                </p>
+            </div>
+			<div class="col-3"></div>
+        </div>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+		<div id="piechart" class="chart"></div>
+		</div>
+		<div class="col-3"></div>
+	</div>
+		 <div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			 <h1 class="text-center">CRISP-DM</h1>
+             <p class="text-center">
+             CRISP-DM(Cross Industry Standard Process for Data Mining) Se trata de un modelo de proceso de minería de datos que describe los enfoques comunes que utilizan los expertos y consiste en 6 pasos
+             </p>
+			 </div>
+		<div class="col-3"></div>
+    </div>
+		<div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p class="text-center">
+                Comprensión del negocio se estudia el problema y se establece que datos se van a estudiar, Comprensión de Datos en esta fase se consigen los primeros datos para su estudio, Preparación de datos en este proceso se selecionan los datos utiles, Modelado en esta seccion se usan los datos ya selecionados para constuir modelos, Evaluación con base a los modelados se analiza los resultados de los datos, Despliegue aqui en la empresa o el cliente a la que se le se entregan los datos toman acciones en base a todos estos procesos.
+                </p>
+            </div>
+			<div class="col-3"></div>
+        </div>
+		<div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			 <h1 class="text-center">KDD</h1>
+             <p class="text-center">
+              KDD(Knowledge Discovery in Databases) este proceso es parecido al CRISP-DM pero se realiza de manera iterativa siguiendo 7 pasos
+             </p>
+			 </div>
+		<div class="col-3"></div>
+    </div>
+		<div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p class="text-center">
+                lo primero es la indetificacion de la meta desde con la aplicacion del KDD para el usuario final, Creacion de conjunto de datos en este paso se recolectan datos y se dividen en sub conjuntos, Limpieza y preprocesamiento de datos aqui se revisan los conjuntos de  datos y se eliminan los datos inutiles, reducción de datos y la proyección se buscan similitudes de los datos para su proyección, Iteracion en este paso se repepiten los anteriores pasos aplicados en cada subconjunto de datos hasta no poder repetir este proceso, Revision y toma de decisiones aqui se estudian los resultados obtenidos para determinar la toma de decisiones. 
+                </p>
+            </div>
+			<div class="col-3"></div>
+        </div>
+		<div class="row">
+		 <div class="col-3"></div>
+		 <div class="col-sm">
+			 <h1 class="text-center">SEMMA</h1>
+             <p class="text-center">
+             SEMMA(Cross Industry Standard Process for Data Mining) es el acrónimo a las cinco fases: (Sample, Explore, Modify, Model, Assess)
+             </p>
+			 </div>
+		<div class="col-3"></div>
+    </div>
+	<div class="row">
+            <div class="col-3"></div>
+            <div class="col-sm">
+                <p class="text-center">
+                Muestra El proceso comienza con el muestreo de datos, por ejemplo, seleccionando el conjunto de datos para modelar, Explorar Esta fase cubre la comprensión de los datos al descubrir relaciones anticipadas e imprevistas entre las variables, y también anomalías, con la ayuda de la visualización de datos, Modificar en esta fase se preparan los datos para su modelacion, Modelo se usan los datos procesados para crear un modelo y tomar desiciones
+                </p>
+            </div>
+			<div class="col-3"></div>
+        </div>
+		
+
+        <div class="row" style="height:20%">
+            <img src="images/end.png" class="img-responsive" style="width:100%"/> 
+        </div>
+     </div>
+</body>
+</html>
